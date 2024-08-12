@@ -1,0 +1,152 @@
+$color1: #3A1078;
+$color2: #4E31AA;
+$color3: #3795BD;
+$color4: #CFCFCF;
+
+#container {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-color: $color1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Roboto", sans-serif;
+
+    h1 {
+        margin: 50px 0;
+        font-weight: bold;
+        color: $color4;
+        text-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+}
+
+#drum-machine {
+    width: 650px;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 50px;
+    align-items: center;
+    background: $color4;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+    @media (max-width: 768px) {
+        width: 85%;
+        justify-content: center;
+        gap: 0;
+    }
+}
+
+#keyboard {
+    width: 332px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    @media (max-width: 768px) {
+        width: 200px;
+        height: 100%;
+    }
+
+    .drum-pad {
+        width: 100px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-weight: bold;
+        box-shadow: black 3px 3px 5px;
+        position: relative;
+        box-shadow:
+            inset 0 0 5px rgba(0, 0, 0, 0.5),
+            /* Sombra interna */
+            3px 3px 10px rgba(0, 0, 0, 0.3);
+        /* Sombra externa */
+        transition: transform 0.1s ease, box-shadow 0.1s ease;
+        background-color: $color2;
+        border-radius: 10px;
+        color: #000;
+
+        &:active {
+            background-color: $color1;
+            transform: scale(0.95);
+            box-shadow: black 1px 1px 3px;
+        }
+        &.active {
+            background-color: $color1;
+            transform: scale(0.95);
+            box-shadow: black 1px 1px 3px;
+        }
+
+        @media (max-width: 768px) {
+            width: 60px;
+            height: 60px;
+        }
+    }
+}
+
+#controls {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 20px;
+    box-sizing: border-box;
+
+    label {
+        font-weight: bold;
+    }
+
+    p {
+        margin: 0;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    #display {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 150px;
+        height: 50px;
+        background-color: $color2;
+        font-weight: bold;
+        color: #000;
+    }
+
+    .bank {
+        .bank-items {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+}
+
+footer {
+    margin: 25px 0;
+
+    a {
+        text-decoration: none;
+        color: $color4;
+        font-weight: bold;
+    }
+}
